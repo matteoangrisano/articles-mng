@@ -1,27 +1,23 @@
 import * as articlesModule from "./articles/articles";
 
 export const articles = {
-  name: "${self:custom.serviceNameShort}-${self:provider.stage}-fleet-admin",
+  name: "${self:custom.projectName}-${self:provider.stage}-articles",
   authenticationType: "AMAZON_COGNITO_USER_POOLS",
-  additionalAuthenticationProviders: [
-    { authenticationType: "AWS_IAM" },
-    { authenticationType: "API_KEY" },
-  ],
+  additionalAuthenticationProviders: [{ authenticationType: "AWS_IAM" }],
   userPoolConfig: {
     awsRegion: "${opt:region, self:custom.defaultRegion}",
     defaultAction: "ALLOW",
     userPoolId:
-      "${cf:cdk-${self:service}-${self:provider.stage}.CognitoAdminUserPoolId}",
+      "${cf:cdk-${self:service}-${self:provider.stage}.CognitoUserPoolIdReaders}",
   },
   logConfig: {
     loggingRoleArn:
-      "${cf:cdk-${self:service}-${self:provider.stage}.RoleAppSyncLogs}",
+      "${cf:cdk-${self:service}-${self:provider.stage}.RoleAppSync}",
     level: "ALL",
     excludeVerboseContent: false,
   },
   schema: ["schemas/articles/schema.graphql"],
-  mappingTemplatesLocation: "dist/mappingTemplates",
+  // mappingTemplatesLocation: "dist/mappingTemplates",
   mappingTemplates: [...articlesModule.mappingTemplates],
   dataSources: [...articlesModule.dataSource],
-  substitutions: { ...articlesModule.substitutions },
 };

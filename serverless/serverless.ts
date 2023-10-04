@@ -4,12 +4,14 @@ import "dotenv";
 import { config } from "dotenv";
 config({ path: `${__dirname}/../../../.env` });
 import path from "path";
+
+const projectName = process.env.PROJECT_NAME;
 const folderName = path.basename(path.dirname(path.dirname(__filename)));
 
 import hello from "@functions/hello";
 
 const serverlessConfiguration: AWS = {
-  service: `${process.env.PROJECT_NAME}-${folderName}`,
+  service: `${projectName}-${folderName}`,
   frameworkVersion: "3",
   plugins: [
     "serverless-esbuild, serverless-webpack, serverless-appsync-plugin,",
@@ -42,6 +44,8 @@ const serverlessConfiguration: AWS = {
       platform: "node",
       concurrency: 10,
     },
+    projectName: projectName,
+    folderName: folderName,
   },
 };
 

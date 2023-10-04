@@ -4,14 +4,15 @@ schema {
 }
 
 type Query {
-  listUsers(count: Int, nextToken: String): UserList
+  getArticle(id: Int): Article
 }
 
-type Mutation {
-  addDefaultGroups(tenant: String): String
-}
+# type Mutation {
+#   addDefaultGroups(tenant: String): String
+# }
 
-type UserList {
-  users: [UserProfile]
-  nextToken: String
+type Article {
+  id: Int
+  title: String
+  author: String
 }
