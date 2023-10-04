@@ -1,0 +1,17 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  listUsers(count: Int, nextToken: String): UserList
+}
+
+type Mutation {
+  addDefaultGroups(tenant: String): String
+}
+
+type UserList {
+  users: [UserProfile]
+  nextToken: String
+}

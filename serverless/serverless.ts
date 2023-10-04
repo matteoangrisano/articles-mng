@@ -1,4 +1,5 @@
 import type { AWS } from "@serverless/typescript";
+import appSync from "appSync";
 import "dotenv";
 import { config } from "dotenv";
 config({ path: `${__dirname}/../../../.env` });
@@ -10,7 +11,9 @@ import hello from "@functions/hello";
 const serverlessConfiguration: AWS = {
   service: `${process.env.PROJECT_NAME}-${folderName}`,
   frameworkVersion: "3",
-  plugins: ["serverless-esbuild"],
+  plugins: [
+    "serverless-esbuild, serverless-webpack, serverless-appsync-plugin,",
+  ],
   provider: {
     name: "aws",
     runtime: "nodejs18.x",
