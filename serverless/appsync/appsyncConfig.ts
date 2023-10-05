@@ -1,8 +1,10 @@
-import * as articlesModule from "./articles/articles";
+import * as articlesModule from "./apiConfig";
 
-export const articles = {
+const appsyncConfig = {
   name: "${self:service}-${self:provider.stage}",
-  authenticationType: "AMAZON_COGNITO_USER_POOLS",
+  authentication: {
+    type: "AMAZON_COGNITO_USER_POOLS",
+  },
   additionalAuthenticationProviders: [{ authenticationType: "AWS_IAM" }],
   userPoolConfig: {
     awsRegion: "${opt:region, self:custom.defaultRegion}",
@@ -21,3 +23,5 @@ export const articles = {
   mappingTemplates: [...articlesModule.mappingTemplates],
   dataSources: [...articlesModule.dataSource],
 };
+
+export default appsyncConfig;

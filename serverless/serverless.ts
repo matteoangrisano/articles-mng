@@ -1,5 +1,5 @@
 import type { AWS } from "@serverless/typescript";
-import appsync from "appsync";
+import appsyncConfig from "appsync/appsyncConfig";
 import "dotenv";
 import { config } from "dotenv";
 config({ path: `${__dirname}/../../../.env` });
@@ -37,7 +37,7 @@ const serverlessConfiguration: AWS = {
   functions: { hello },
   package: { individually: true },
   configValidationMode: "error",
-  appSync: appsync,
+  appSync: appsyncConfig,
   custom: {
     esbuild: {
       bundle: true,
