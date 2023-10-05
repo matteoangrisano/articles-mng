@@ -46,7 +46,7 @@ const serverlessConfiguration: AWS = {
     },
 
     appSync: appSync,
-    projectName: projectName,
+    projectName1: "aaa",
     folderName: folderName,
   },
 };
