@@ -13,7 +13,7 @@ const defaultStage = "dev";
 const defaultRegion = "eu-west-1";
 
 const serverlessConfiguration: AWS = {
-  service: `${projectName}-${folderName}`,
+  service: `${process.env.PROJECT_NAME}-${folderName}`,
   frameworkVersion: "3",
   plugins: [
     "serverless-esbuild",
