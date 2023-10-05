@@ -3,6 +3,7 @@ const mutationsFolder = "../mappingTemplates/mutations";
 
 const resolvers = {
   "Query.getArticle": {
+    kind: "UNIT",
     code: `${queriesFolder}/getArticle.ts`,
     dataSource: "tableArticles",
   },
