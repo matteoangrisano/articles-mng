@@ -1,5 +1,5 @@
 import type { AWS } from "@serverless/typescript";
-import appSync from "appSync";
+import appsync from "appsync";
 import "dotenv";
 import { config } from "dotenv";
 config({ path: `${__dirname}/../../../.env` });
@@ -7,7 +7,7 @@ import path from "path";
 
 import hello from "@functions/hello";
 
-const projectName = process.env.PROJECT_NAME;
+const projectName = "article-mng";
 const folderName = path.basename(path.dirname(path.dirname(__filename)));
 const defaultStage = "dev";
 const defaultRegion = "eu-west-1";
@@ -21,9 +21,7 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: "aws",
     runtime: "nodejs18.x",
-    // @ts-ignore
     stage: "${opt:stage, self:custom.defaultStage}",
-    // @ts-ignore
     region: process.env.REGION,
     apiGateway: {
       minimumCompressionSize: 1024,
@@ -49,12 +47,12 @@ const serverlessConfiguration: AWS = {
       concurrency: 10,
     },
 
-    appSync: appSync,
+    appSync: appsync,
     projectName: projectName,
     folderName: folderName,
     defaultStage: defaultStage,
     defaultRegion: defaultRegion,
   },
-};
+} as any;
 
 module.exports = serverlessConfiguration;

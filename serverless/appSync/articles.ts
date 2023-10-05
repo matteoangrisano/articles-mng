@@ -1,7 +1,7 @@
 import * as articlesModule from "./articles/articles";
 
 export const articles = {
-  name: "${self:custom.projectName}-${self:provider.stage}-articles",
+  name: "${self:custom.projectName}-${self:provider.stage}-fleet-admin",
   authenticationType: "AMAZON_COGNITO_USER_POOLS",
   additionalAuthenticationProviders: [{ authenticationType: "AWS_IAM" }],
   userPoolConfig: {
@@ -17,7 +17,7 @@ export const articles = {
     excludeVerboseContent: false,
   },
   schema: ["schemas/articles/schema.graphql"],
-  // mappingTemplatesLocation: "dist/mappingTemplates",
+  mappingTemplatesLocation: "dist/mappingTemplates",
   mappingTemplates: [...articlesModule.mappingTemplates],
   dataSources: [...articlesModule.dataSource],
 };
