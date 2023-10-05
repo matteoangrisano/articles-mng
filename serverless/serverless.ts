@@ -44,8 +44,8 @@ const serverlessConfiguration: AWS = {
       platform: "node",
       concurrency: 10,
     },
-    projectName: projectName,
-    folderName: folderName,
+    projectName: `${projectName}`,
+    folderName: `${folderName}`,
     appSync: appSync,
   },
 };
