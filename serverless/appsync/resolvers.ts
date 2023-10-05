@@ -1,5 +1,5 @@
-const queriesFolder = "../mappingTemplates/queries";
-const mutationsFolder = "../mappingTemplates/mutations";
+const queriesFolder = "mappingTemplates/queries";
+const mutationsFolder = "mappingTemplates/mutations";
 
 const resolvers = {
   "Query.getArticle": {
