@@ -16,7 +16,9 @@ const serverlessConfiguration: AWS = {
   service: `${projectName}-${folderName}`,
   frameworkVersion: "3",
   plugins: [
-    "serverless-esbuild, serverless-webpack, serverless-appsync-plugin,",
+    "serverless-esbuild",
+    "serverless-webpack",
+    "serverless-appsync-plugin",
   ],
   provider: {
     name: "aws",
