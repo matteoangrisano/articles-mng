@@ -3,13 +3,11 @@ const mutationsFolder = "../mappingTemplates/mutations";
 
 const resolvers = {
   "Query.getArticle": {
-    kind: "UNIT",
-    code: `${queriesFolder}/getArticle.js`,
+    code: `${queriesFolder}/getArticle.ts`,
     dataSource: "tableArticles",
   },
   "Mutation.postArticle": {
-    kind: "UNIT",
-    code: `${mutationsFolder}/postArticle.js`,
+    code: `${mutationsFolder}/postArticle.ts`,
     dataSource: "tableArticles",
   },
 };
