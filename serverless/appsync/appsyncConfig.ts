@@ -19,8 +19,8 @@ const appsyncConfig = {
     excludeVerboseContent: false,
   },
   schema: ["./schema.graphql"],
-  resolvers: [resolvers],
-  dataSources: [dataSources],
+  resolvers: resolvers,
+  dataSources: dataSources,
 };
 
 export default appsyncConfig;
