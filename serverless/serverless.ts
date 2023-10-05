@@ -9,6 +9,8 @@ import hello from "@functions/hello";
 
 const projectName = process.env.PROJECT_NAME;
 const folderName = path.basename(path.dirname(path.dirname(__filename)));
+const defaultStage = "dev";
+const defaultRegion = "eu-west-1";
 
 const serverlessConfiguration: AWS = {
   service: `${projectName}-${folderName}`,
@@ -19,6 +21,8 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: "aws",
     runtime: "nodejs18.x",
+    // @ts-ignore
+    stage: "${opt:stage, self:custom.defaultStage}",
     // @ts-ignore
     region: process.env.REGION,
     apiGateway: {
@@ -46,8 +50,10 @@ const serverlessConfiguration: AWS = {
     },
 
     appSync: appSync,
-    projectName1: "aaa",
+    projectName: projectName,
     folderName: folderName,
+    defaultStage: defaultStage,
+    defaultRegion: defaultRegion,
   },
 };
 
