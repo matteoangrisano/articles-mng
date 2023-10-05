@@ -5,6 +5,8 @@ import { config } from "dotenv";
 config({ path: `${__dirname}/../../../.env` });
 import path from "path";
 
+import hello from "@functions/hello";
+
 const projectName = process.env.PROJECT_NAME;
 const folderName = path.basename(path.dirname(path.dirname(__filename)));
 
@@ -44,6 +46,7 @@ const serverlessConfiguration: AWS = {
     },
     projectName: projectName,
     folderName: folderName,
+    appSync: appSync,
   },
 };
 
