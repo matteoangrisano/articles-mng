@@ -5,6 +5,7 @@ const resolvers = {
   "Query.getArticle": {
     kind: "UNIT",
     code: `${queriesFolder}/getArticle.ts`,
+    request: "",
     dataSource: "tableArticles",
   },
   "Mutation.postArticle": {
