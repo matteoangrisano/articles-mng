@@ -7,7 +7,6 @@ import path from "path";
 
 import hello from "@functions/hello";
 
-const projectName = "article-mng";
 const folderName = path.basename(path.dirname(path.dirname(__filename)));
 const defaultStage = "dev";
 const defaultRegion = "eu-west-1";
@@ -37,6 +36,8 @@ const serverlessConfiguration: AWS = {
   // import the function via paths
   functions: { hello },
   package: { individually: true },
+  configValidationMode: "error",
+  appSync: appsync,
   custom: {
     esbuild: {
       bundle: true,
@@ -49,8 +50,6 @@ const serverlessConfiguration: AWS = {
       concurrency: 10,
     },
 
-    appSync: appsync,
-    projectName: projectName,
     folderName: folderName,
     defaultStage: defaultStage,
     defaultRegion: defaultRegion,
