@@ -1,4 +1,5 @@
-import * as articlesModule from "./apiConfig";
+import mappingTemplates from "./mappingTemplates";
+import dataSources from "./dataSources";
 
 const appsyncConfig = {
   name: "${self:service}-${self:provider.stage}",
@@ -18,8 +19,8 @@ const appsyncConfig = {
     excludeVerboseContent: false,
   },
   schema: ["schemas/articles/schema.graphql"],
-  mappingTemplates: [...articlesModule.mappingTemplates],
-  dataSources: [...articlesModule.dataSource],
+  resolvers: [...mappingTemplates],
+  dataSources: [...dataSources],
 };
 
 export default appsyncConfig;

@@ -1,17 +1,4 @@
-const mappingTemplatesPath = "articles";
-
-console.log(mappingTemplatesPath);
-
-export const mappingTemplates = [
-  // {
-  //   field: "getArticle",
-  //   type: "Query",
-  //   code: `${mappingTemplatesPath}/Query.getArticle.ts`,
-  //   dataSource: "tableArticles",
-  // },
-];
-
-export const dataSource = [
+export const dataSources = [
   // {
   //   type: "AMAZON_DYNAMODB",
   //   name: "tableArticles",
@@ -25,4 +12,4 @@ export const dataSource = [
   // },
 ];
 
-export const substitutions = {};
+export default dataSources;
