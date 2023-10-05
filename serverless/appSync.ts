@@ -1,5 +1,5 @@
-import { articles } from "./appSync/articles";
+import { articles } from "./appsync/articles";
 
-const appSync = [articles];
+const appsync = [articles];
 
-export default appSync;
+export default appsync;
