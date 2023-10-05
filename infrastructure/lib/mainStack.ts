@@ -71,12 +71,12 @@ export class Infrastructure extends cdk.Stack {
 
     const CognitoUserPoolIdReaders = new cdk.CfnOutput(
       this,
-      "CognitoAdminUserPoolId",
+      "CognitoUserPoolIdReaders",
       {
         value: cognitoUserPoolIdReaders.userPoolId,
       }
     );
-    CognitoUserPoolIdReaders.overrideLogicalId(`CognitoAdminUserPoolId`);
+    CognitoUserPoolIdReaders.overrideLogicalId(`CognitoUserPoolIdReaders`);
 
     const RoleAppSync = new cdk.CfnOutput(this, "RoleAppSync", {
       value: roleAppSync.roleArn,
@@ -85,7 +85,7 @@ export class Infrastructure extends cdk.Stack {
 
     const DynamoDBTableArticles = new cdk.CfnOutput(
       this,
-      "DynamoDBTableTenant",
+      "DynamoDBTableArticles",
       {
         value: dynamoDBTableArticles.tableName,
       }
