@@ -1,4 +1,4 @@
-import mappingTemplates from "./mappingTemplates";
+import resolvers from "./resolvers";
 import dataSources from "./dataSources";
 
 const appsyncConfig = {
@@ -19,8 +19,8 @@ const appsyncConfig = {
     excludeVerboseContent: false,
   },
   schema: ["./schema.graphql"],
-  resolvers: [...mappingTemplates],
-  dataSources: [...dataSources],
+  resolvers: [resolvers],
+  dataSources: [dataSources],
 };
 
 export default appsyncConfig;

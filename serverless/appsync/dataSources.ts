@@ -1,5 +1,5 @@
-export const dataSources = [
-  {
+export const dataSources = {
+  tableArticles: {
     type: "AMAZON_DYNAMODB",
     name: "tableArticles",
     description: "tableArticles",
@@ -10,6 +10,6 @@ export const dataSources = [
         "${cf:cdk-${self:service}-${self:provider.stage}.RoleAppSync}",
     },
   },
-];
+};
 
 export default dataSources;
