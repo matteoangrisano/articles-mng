@@ -7,9 +7,8 @@ type Query {
   getArticle(id: Int): Article
 }
 
-# type Mutation {
-#   addDefaultGroups(tenant: String): String
-# }
+type Mutation {
+}
 
 type Article {
   id: Int

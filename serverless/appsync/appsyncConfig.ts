@@ -18,7 +18,7 @@ const appsyncConfig = {
     level: "ALL",
     excludeVerboseContent: false,
   },
-  schema: ["schemas/articles/schema.graphql"],
+  schema: ["./schema.graphql"],
   resolvers: [...mappingTemplates],
   dataSources: [...dataSources],
 };
