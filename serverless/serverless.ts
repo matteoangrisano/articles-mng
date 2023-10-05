@@ -1,5 +1,5 @@
 import type { AWS } from "@serverless/typescript";
-import appsync from "appsync";
+import appSync from "appSync";
 import "dotenv";
 import { config } from "dotenv";
 config({ path: `${__dirname}/../../../.env` });
@@ -44,9 +44,10 @@ const serverlessConfiguration: AWS = {
       platform: "node",
       concurrency: 10,
     },
+
+    appSync: appSync,
     projectName: projectName,
     folderName: folderName,
-    appsync: appsync,
   },
 };
 
