@@ -1,15 +1,14 @@
-// const queriesFolder = "../mappingTemplates/queries";
-// const mutationsFolder = "../mappingTemplates/mutations";
+const queriesFolder = "../mappingTemplates/queries";
+const mutationsFolder = "../mappingTemplates/mutations";
 
 const resolvers = {
   "Query.getArticle": {
-    kind: "UNIT",
-    // code: `${queriesFolder}/getArticle.ts`,
+    code: `${queriesFolder}/getArticle.ts`,
     dataSource: "tableArticles",
   },
   "Mutation.postArticle": {
     kind: "UNIT",
-    // code: `${mutationsFolder}/postArticle.ts`,
+    code: `${mutationsFolder}/postArticle.ts`,
     dataSource: "tableArticles",
   },
 };
