@@ -11,7 +11,7 @@ import schema from "./schema";
 const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   event
 ) => {
-  console.log(process.env.PROJECT_NAME);
+  console.log(process.env.FOO);
 };
 
 export const main = middyfy(hello);
