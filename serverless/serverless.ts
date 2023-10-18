@@ -19,12 +19,12 @@ const serverlessConfiguration: AWS = {
     "serverless-webpack",
     "serverless-appsync-plugin",
   ],
+  useDotenv: true,
   provider: {
     name: "aws",
     runtime: "nodejs18.x",
     stage: "${opt:stage, self:custom.defaultStage}",
     region: process.env.REGION,
-    useDotenv: true,
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
