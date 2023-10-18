@@ -43,6 +43,7 @@ const serverlessConfiguration: AWS = {
       bundle: true,
       minify: false,
       sourcemap: true,
+      include: [".env"],
       exclude: ["aws-sdk"],
       target: "node14",
       define: { "require.resolve": undefined },

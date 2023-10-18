@@ -8,11 +8,32 @@ type Query {
 }
 
 type Mutation {
-  postArticle(id: Int, title: String, author: String): Article
+  postArticle(input: ArticleInput): Article
 }
 
 type Article {
-  id: Int
+  id: ID
+  category: ArticleCategory
+  subcategory: ArticleSubCategory
   title: String
-  author: String
+  creationDate: AWSDateTime
+}
+
+input ArticleInput {
+  id: ID!
+  category: ArticleCategory!
+  subcategory: ArticleSubCategory!
+  title: String!
+  creationDate: AWSDateTime
+}
+
+enum ArticleCategory {
+  cloud
+  networking
+}
+
+enum ArticleSubCategory {
+  aws
+  subnetting
+  security
 }

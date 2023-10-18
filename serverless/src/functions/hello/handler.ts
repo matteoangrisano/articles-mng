@@ -1,14 +1,17 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
-import { formatJSONResponse } from '@libs/api-gateway';
-import { middyfy } from '@libs/lambda';
+import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
+import { formatJSONResponse } from "@libs/api-gateway";
+import { middyfy } from "@libs/lambda";
 
-import schema from './schema';
+import "dotenv";
+import { config } from "dotenv";
+config({ path: `${__dirname}/../../../../.env` });
 
-const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
-  return formatJSONResponse({
-    message: `Hello ${event.body.name}, welcome to the exciting Serverless world!`,
-    event,
-  });
+import schema from "./schema";
+
+const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
+  event
+) => {
+  console.log(process.env.PROJECT_NAME);
 };
 
 export const main = middyfy(hello);
