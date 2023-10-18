@@ -19,7 +19,6 @@ const serverlessConfiguration: AWS = {
     "serverless-webpack",
     "serverless-appsync-plugin",
   ],
-  useDotenv: true,
   provider: {
     name: "aws",
     runtime: "nodejs18.x",
@@ -32,7 +31,6 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
       NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
-      FOO: "env:PROJECT_NAME",
     },
   },
   // import the function via paths
