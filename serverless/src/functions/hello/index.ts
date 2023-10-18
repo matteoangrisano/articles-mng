@@ -3,6 +3,6 @@ import { handlerPath } from "@libs/handler-resolver";
 export default {
   handler: `${handlerPath(__dirname)}/handler.call`,
   // environment: {
-  //   FOO: "${env:FOO}",
+  //   REGION: process.env.REGION,
   // },
 };
