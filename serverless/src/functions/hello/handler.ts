@@ -4,7 +4,7 @@ import { middyfy } from "@libs/lambda";
 
 import "dotenv";
 import { config } from "dotenv";
-config({ path: `${__dirname}/../../../../.env` });
+config({ path: `${__dirname}/../../../../../.env` });
 
 import schema from "./schema";
 
