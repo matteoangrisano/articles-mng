@@ -31,7 +31,6 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
       NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
-      FOO: process.env.PROJECT_NAME,
     },
   },
   // import the function via paths
@@ -54,6 +53,8 @@ const serverlessConfiguration: AWS = {
     folderName: folderName,
     defaultStage: defaultStage,
     defaultRegion: defaultRegion,
+
+    FOO: process.env.PROJECT_NAME,
   },
 } as any;
 
