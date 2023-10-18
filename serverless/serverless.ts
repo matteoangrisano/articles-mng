@@ -24,6 +24,7 @@ const serverlessConfiguration: AWS = {
     runtime: "nodejs18.x",
     stage: "${opt:stage, self:custom.defaultStage}",
     region: process.env.REGION,
+    useDotenv: true,
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
@@ -31,6 +32,7 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
       NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
+      FOO: "env:PROJECT_NAME",
     },
   },
   // import the function via paths
