@@ -3,9 +3,9 @@ import { handlerPath } from "@libs/handler-resolver";
 
 export default {
   handler: `${handlerPath(__dirname)}/handler.main`,
-  environment: {
-    FOO: "${env:FOO}",
-  },
+  // environment: {
+  //   FOO: "${env:FOO}",
+  // },
   events: [
     {
       http: {
