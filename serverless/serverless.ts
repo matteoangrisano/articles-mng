@@ -54,7 +54,7 @@ const serverlessConfiguration: AWS = {
     defaultStage: defaultStage,
     defaultRegion: defaultRegion,
 
-    FOO: process.env.PROJECT_NAME,
+    FOO: "FOOOO",
   },
 } as any;
 
